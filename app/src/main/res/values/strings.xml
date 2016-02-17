@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">APPetite</string>
+    <string name="btnSignIn">Sign In</string>
+    <string name="btnMenu">Menu</string>
 </resources>
