@@ -2,4 +2,6 @@
     <string name="app_name">APPetite</string>
     <string name="btnSignIn">Sign In</string>
     <string name="btnMenu">Menu</string>
+    <string name="title_activity_nav">NavActivity</string>
+    <string name="btnNavTo">Take Me</string>
 </resources>
