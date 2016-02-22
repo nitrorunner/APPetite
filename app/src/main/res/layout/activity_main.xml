@@ -9,6 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ryanj11_tech.appetite.MainActivity"
     android:orientation="vertical"
+    android:background="@drawable/wooden"
     >
 
     <Button
@@ -38,10 +39,10 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="160sp"
-        android:layout_height="50sp"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:background="@color/btnBackground"
-        android:text="Navigate"
+        android:text="@string/btnNavTo"
         android:id="@+id/btnTakeMe"
         android:textColor="@color/whiteText"
         android:layout_marginBottom="19dp"
@@ -50,10 +51,10 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="160sp"
-        android:layout_height="50sp"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:background="@color/btnBackground"
-        android:text="Reviews"
+        android:text="@string/btnReview"
         android:id="@+id/btnReviews"
         android:textColor="@color/whiteText"
         android:layout_alignBottom="@+id/btnTakeMe"
