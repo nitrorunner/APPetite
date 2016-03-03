@@ -39,8 +39,8 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="140sp"
+        android:layout_height="40sp"
         android:background="@color/btnBackground"
         android:text="@string/btnNavTo"
         android:id="@+id/btnTakeMe"
@@ -51,8 +51,8 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="140sp"
+        android:layout_height="40sp"
         android:background="@color/btnBackground"
         android:text="@string/btnReview"
         android:id="@+id/btnReviews"
@@ -62,21 +62,21 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="140sp"
+        android:layout_height="40sp"
         android:background="@color/btnBackground"
-        android:text="@string/btnChekin"
+        android:text="@string/btnCheckin"
         android:id="@+id/btnCheckIn"
         android:textColor="@color/whiteText"
         android:singleLine="true"
         android:layout_above="@+id/btnTakeMe"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="18dp" />
 
     <Button
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="140sp"
+        android:layout_height="40sp"
         android:background="@color/btnBackground"
         android:text="@string/btnPromo"
         android:id="@+id/btnPromo"
@@ -84,5 +84,30 @@
         android:layout_alignTop="@+id/btnCheckIn"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:text="@string/btnTipCalc"
+        android:id="@+id/btnTipCalc"
+        android:background="@color/btnBackground"
+        android:textColor="@color/whiteText"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/btnCheckIn"
+        android:layout_centerHorizontal="true"
+        android:textSize="12dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/restaurant"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/btnSignIn"
+        android:layout_alignEnd="@+id/btnSignIn"
+        android:layout_above="@+id/btnTipCalc" />
 
 </RelativeLayout>

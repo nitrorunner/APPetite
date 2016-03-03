@@ -5,6 +5,11 @@
     <string name="title_activity_nav">NavActivity</string>
     <string name="btnNavTo">Take Me</string>
     <string name="btnReview">Reviews</string>
-    <string name="btnChekin">Check-in</string>
     <string name="btnPromo">Promotions</string>
+    <string name="btnTipCalc">$Tip Calculator</string>
+    <string name="title_activity_checkin">Checkin</string>
+    <string name="btnCheckin">Check-in</string>
+    <string name="btnFB">Facebook</string>
+    <string name="btnTwit">Twitter</string>
+    <string name="checkinBanner">Wanna save some sweet cash?</string>
 </resources>

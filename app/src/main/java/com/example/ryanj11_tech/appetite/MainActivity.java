@@ -17,14 +17,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnTakeMe = (Button)findViewById(R.id.btnTakeMe);
         btnTakeMe.setOnClickListener(this);
 
+        Button btnCheckin = (Button)findViewById(R.id.btnCheckIn);
+        btnCheckin.setOnClickListener(this);
+
     }
 
 
-    public void onClick(View v){
-        Intent navIntent=new Intent(this,NavActivity.class);
-        navIntent.setAction(Intent.ACTION_VIEW);
-        startActivity(navIntent);
-    }
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnTakeMe:
+                Intent navIntent = new Intent(this, NavActivity.class);
+                navIntent.setAction(Intent.ACTION_VIEW);
+                startActivity(navIntent);
+            break;
+            case R.id.btnCheckIn:
+                Intent checkinIntent = new Intent(this, Checkin.class);
+                checkinIntent.setAction(Intent.ACTION_VIEW);
+                startActivity(checkinIntent);
+            break;
 
+        }
+    }
 
 }

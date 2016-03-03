@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="btnBackground">#9e1b08</color>
     <color name="whiteText">#ffffff</color>
+    <color name="facebook">#3b5998</color>
+    <color name="twitter">#00aced</color>
 </resources>
