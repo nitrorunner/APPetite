@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnCheckin = (Button)findViewById(R.id.btnCheckIn);
         btnCheckin.setOnClickListener(this);
          **/
-
+        //Test
         Button btnSignIn = (Button) findViewById(R.id.btnSignIn);
         btnSignIn.setOnClickListener(this);
     }
