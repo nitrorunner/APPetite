@@ -19,7 +19,8 @@
         <activity
             android:name=".Checkin"
             android:label="@string/title_activity_checkin"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+    </activity>
     </application>
 
 </manifest>
