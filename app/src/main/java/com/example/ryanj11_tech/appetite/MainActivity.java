@@ -13,16 +13,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Button btnTakeMe = (Button)findViewById(R.id.btnTakeMe);
         btnTakeMe.setOnClickListener(this);
 
+        /**
         Button btnCheckin = (Button)findViewById(R.id.btnCheckIn);
         btnCheckin.setOnClickListener(this);
+         **/
 
+        Button btnSignIn = (Button) findViewById(R.id.btnSignIn);
+        btnSignIn.setOnClickListener(this);
     }
-
-
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnTakeMe:
@@ -30,10 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 navIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(navIntent);
             break;
-            case R.id.btnCheckIn:
-                Intent checkinIntent = new Intent(this, Checkin.class);
-                checkinIntent.setAction(Intent.ACTION_VIEW);
-                startActivity(checkinIntent);
+            case R.id.btnSignIn:
+                Intent signinIntent = new Intent (this, LogInActivity.class);
+                signinIntent.setAction(Intent.ACTION_VIEW);
+                startActivity(signinIntent);
             break;
 
         }
