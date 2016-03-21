@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnSignIn = (Button) findViewById(R.id.btnSignIn);//for facebook
         btnSignIn.setOnClickListener(this);
+
+        Button btnTipCalc = (Button) findViewById(R.id.btnTipCalc);
+        btnTipCalc.setOnClickListener(this);
     }
     public void onClick(View v) {
         switch (v.getId()) {
@@ -39,7 +42,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 signinIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(signinIntent);
             break;
-
+            case R.id.btnTipCalc:
+                Intent tipcalIntent = new Intent (this, TipActivity.class);
+                tipcalIntent.setAction(Intent.ACTION_VIEW);
+                startActivity(tipcalIntent);
         }
     }
 
