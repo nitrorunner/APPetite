@@ -16,11 +16,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnTakeMe = (Button)findViewById(R.id.btnTakeMe);
         btnTakeMe.setOnClickListener(this);
 
-
         Button btnCheckin = (Button)findViewById(R.id.btnCheckIn);
         btnCheckin.setOnClickListener(this);
 
-        Button btnSignIn = (Button) findViewById(R.id.btnSignIn);
+        Button btnSignIn = (Button) findViewById(R.id.btnSignIn);//for facebook
         btnSignIn.setOnClickListener(this);
     }
     public void onClick(View v) {
