@@ -8,8 +8,13 @@ import android.widget.EditText;
 
 import java.text.DecimalFormat;
 
+/**
+ * Reminder: change EditText of tipCost to Spinner (10%, 15%, 20%)
+ * Need to touch up UI designs
+ */
 public class TipActivity extends AppCompatActivity {
 
+    //DecimalFormat class will round end result of tip and bill calculations to 2 decimal places
     DecimalFormat df = new DecimalFormat("#.00");
     EditText billCost, tipCost, billTotal, tipTotal;
     double bCost, tCost, bTotal, tTotal;
