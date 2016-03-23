@@ -107,5 +107,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/btnSignIn"
         android:layout_alignEnd="@+id/btnSignIn"
-        android:layout_above="@+id/btnTipCalc" />
+        android:layout_above="@+id/btnTipCalc"
+        android:src="@drawable/restaurant"/>
 </RelativeLayout>
