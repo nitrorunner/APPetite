@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent navIntent = new Intent(this, NavActivity.class);
                 navIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(navIntent);
-            break;
+                break;
             case R.id.btnCheckIn:
                 Intent checkinIntent = new Intent(this,Checkin.class);
                 checkinIntent.setAction(Intent.ACTION_VIEW);
@@ -41,11 +41,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent signinIntent = new Intent (this, LogInActivity.class);
                 signinIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(signinIntent);
-            break;
+                break;
             case R.id.btnTipCalc:
                 Intent tipcalIntent = new Intent (this, TipActivity.class);
                 tipcalIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(tipcalIntent);
+                break;
         }
     }
 
