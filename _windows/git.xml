@@ -1,6 +1,6 @@
 <application>
   <component name="Git.Application.Settings">
-    <option name="myPathToGit" value="C:\Users\john\AppData\Local\GitHub\PortableGit_cf76fc1621ac41ad4fe86c420ab5ff403f1808b9\cmd\git.exe" />
+    <option name="myPathToGit" value="C:\Users\john\Documents\GitHub\APPetite\build.gradle" />
     <option name="SSH_EXECUTABLE" value="IDEA_SSH" />
   </component>
 </application>
