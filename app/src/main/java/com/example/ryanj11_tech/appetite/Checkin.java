@@ -22,12 +22,16 @@ public class Checkin extends AppCompatActivity {
 
         Button FB_btn=(Button)findViewById(R.id.btnFB);
         final String pageId = "86552939404";//changes based on company
+        final String twitterId="gcfb";
+
+        Button TW_btn=(Button)findViewById(R.id.btnTwit);
+
 
         FB_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/" + pageId));
+                    Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("fb://page/" + pageId));
                     startActivity(intent);
                 } catch (Exception e) {
                     Intent intent =  new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/" + pageId));
@@ -35,6 +39,18 @@ public class Checkin extends AppCompatActivity {
                 }
 
             }
+        });
+
+        TW_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?screen_name=" + twitterId)));
+                }catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/#!/" + twitterId)));
+                }
+            }
+
         });
 
 
