@@ -22,7 +22,7 @@
             android:id="@+id/btnFB"
             android:text="@string/btnFB"
             android:background="@color/facebook"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="76dp"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/whiteText"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:id="@+id/btnTwit"
             android:background="@color/twitter"
             android:text="@string/btnTwit"
@@ -49,11 +49,12 @@
             android:layout_marginTop="161dp"
             android:background="@color/btnBackground"
             android:textColor="@color/whiteText"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"/>
+            android:paddingRight="10dp"
+            android:onClick="checkClick"/>
 
         <TextView
             android:layout_width="wrap_content"
