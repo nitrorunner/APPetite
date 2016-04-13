@@ -13,4 +13,5 @@
     <string name="btnTwit">Twitter</string>
     <string name="checkinBanner">Wanna save some sweet cash?</string>
     <string name="pageID_text">86552939404</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

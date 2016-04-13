@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ryanj11_tech.appetite">
 
-    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.NFC" />
+
     <uses-feature
         android:name="android.hardware.nfc"
-        android:required="false"/>
+        android:required="false" />
 
     <application
         android:allowBackup="false"
@@ -21,12 +22,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".NavActivity" />
-        <activity android:name=".TipActivity"/>
+        <activity android:name=".TipActivity" />
         <activity
             android:name=".Checkin"
             android:label="@string/title_activity_checkin"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".LogInActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LogInActivity" />
     </application>
 
 </manifest>
