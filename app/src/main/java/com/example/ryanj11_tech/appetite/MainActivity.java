@@ -28,22 +28,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnTakeMe:
-                Intent navIntent = new Intent(this, NavActivity.class);
+                Intent navIntent = new Intent(MainActivity.this, NavActivity.class);
                 navIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(navIntent);
                 break;
             case R.id.btnCheckIn:
-                Intent checkinIntent = new Intent(this,Checkin.class);
+                Intent checkinIntent = new Intent(MainActivity.this,Checkin.class);
                 checkinIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(checkinIntent);
                 break;
             case R.id.btnSignIn:
-                Intent signinIntent = new Intent (this, LogInActivity.class);
+                Intent signinIntent = new Intent (MainActivity.this, LogInActivity.class);
                 signinIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(signinIntent);
                 break;
             case R.id.btnTipCalc:
-                Intent tipcalIntent = new Intent (this, TipActivity.class);
+                Intent tipcalIntent = new Intent (MainActivity.this, TipActivity.class);
                 tipcalIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(tipcalIntent);
                 break;
