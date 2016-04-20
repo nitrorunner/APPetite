@@ -2,6 +2,7 @@ package com.example.ryanj11_tech.appetite;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 
 public class Checkin extends AppCompatActivity {
 
-
+    NfcAdapter nfcAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,4 +58,14 @@ public class Checkin extends AppCompatActivity {
 
     }
 
+    public void checkClick(View view) {
+        if((nfcAdapter !=null)&&(nfcAdapter.isEnabled()))
+        {
+            Toast.makeText(Checkin.this,"NFC enabled :)",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(Checkin.this,"NFC needs to be enabled",Toast.LENGTH_SHORT).show();
+        }
+
+    }
 }
