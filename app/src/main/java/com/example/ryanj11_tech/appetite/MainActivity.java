@@ -24,6 +24,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnTipCalc = (Button) findViewById(R.id.btnTipCalc);
         btnTipCalc.setOnClickListener(this);
+
+        Button btnReviews = (Button) findViewById(R.id.btnReviews);
+        btnTipCalc.setOnClickListener(this);
+
+        Button btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu.setOnClickListener(this);
+
     }
     public void onClick(View v) {
         switch (v.getId()) {
@@ -46,6 +53,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent tipcalIntent = new Intent (MainActivity.this, TipActivity.class);
                 tipcalIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(tipcalIntent);
+                break;
+
+            case R.id.btnReviews:
+                Intent reviewsIntent = new Intent (MainActivity.this, ReviewActivity.class);
+                reviewsIntent.setAction(Intent.ACTION_VIEW);
+                startActivity(reviewsIntent);
+                break;
+
+            case R.id.btnMenu:
+                Intent menuIntent = new Intent (MainActivity.this, MenuActivity.class);
+                menuIntent.setAction(Intent.ACTION_VIEW);
+                startActivity(menuIntent);
                 break;
         }
     }
