@@ -31,10 +31,10 @@ public class TipActivity extends AppCompatActivity {
         tipTotal = (EditText) findViewById(R.id.tipTotal);
         btnCal = (Button) findViewById(R.id.btnCal);
 
-       billTotal.setFocusable(false);
-       billTotal.setFocusableInTouchMode(false);
-       tipTotal.setFocusable(false);
-       tipTotal.setFocusableInTouchMode(false);
+        billTotal.setFocusable(false);
+        billTotal.setFocusableInTouchMode(false);
+        tipTotal.setFocusable(false);
+        tipTotal.setFocusableInTouchMode(false);
 
         btnCal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class TipActivity extends AppCompatActivity {
                 } else {
                     tCost = .00;
                 }
-                tTotal = bCost * (tCost*.01);
+                tTotal = bCost * (tCost * .01);
                 bTotal = tTotal + bCost;
 
                 String tSum = df.format(tTotal);
@@ -60,7 +60,6 @@ public class TipActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }

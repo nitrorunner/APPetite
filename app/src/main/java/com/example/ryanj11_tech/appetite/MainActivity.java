@@ -13,58 +13,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnTakeMe = (Button)findViewById(R.id.btnTakeMe);
-        btnTakeMe.setOnClickListener(this);
-
-        Button btnCheckin = (Button)findViewById(R.id.btnCheckIn);
-        btnCheckin.setOnClickListener(this);
-
-        Button btnSignIn = (Button) findViewById(R.id.btnSignIn);//for facebook
-        btnSignIn.setOnClickListener(this);
-
-        Button btnTipCalc = (Button) findViewById(R.id.btnTipCalc);
-        btnTipCalc.setOnClickListener(this);
-
-        Button btnReviews = (Button) findViewById(R.id.btnReviews);
-        btnTipCalc.setOnClickListener(this);
-
-        Button btnMenu = (Button)findViewById(R.id.btnMenu);
-        btnMenu.setOnClickListener(this);
-
+        findViewById(R.id.btnTakeMe).setOnClickListener(MainActivity.this);
+        findViewById(R.id.btnCheckIn).setOnClickListener(MainActivity.this);
+        findViewById(R.id.btnSignIn).setOnClickListener(MainActivity.this);
+        findViewById(R.id.btnTipCalc).setOnClickListener(MainActivity.this);
     }
+
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnTakeMe:
-                Intent navIntent = new Intent(MainActivity.this, NavActivity.class);
+                Intent navIntent = new Intent(MainActivity.this, MapActivity.class);
                 navIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(navIntent);
                 break;
             case R.id.btnCheckIn:
-                Intent checkinIntent = new Intent(MainActivity.this,Checkin.class);
+                Intent checkinIntent = new Intent(MainActivity.this, Checkin.class);
                 checkinIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(checkinIntent);
                 break;
             case R.id.btnSignIn:
-                Intent signinIntent = new Intent (MainActivity.this, LogInActivity.class);
+                Intent signinIntent = new Intent(MainActivity.this, LogInActivity.class);
                 signinIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(signinIntent);
                 break;
             case R.id.btnTipCalc:
-                Intent tipcalIntent = new Intent (MainActivity.this, TipActivity.class);
+                Intent tipcalIntent = new Intent(MainActivity.this, TipActivity.class);
                 tipcalIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(tipcalIntent);
-                break;
-
-            case R.id.btnReviews:
-                Intent reviewsIntent = new Intent (MainActivity.this, ReviewActivity.class);
-                reviewsIntent.setAction(Intent.ACTION_VIEW);
-                startActivity(reviewsIntent);
-                break;
-
-            case R.id.btnMenu:
-                Intent menuIntent = new Intent (MainActivity.this, MenuActivity.class);
-                menuIntent.setAction(Intent.ACTION_VIEW);
-                startActivity(menuIntent);
                 break;
         }
     }
