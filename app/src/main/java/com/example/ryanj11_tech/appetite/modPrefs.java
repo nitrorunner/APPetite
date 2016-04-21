@@ -22,7 +22,7 @@ public class modPrefs {
         editor.putString(key, data);
         editor.commit();
     }
-    public void delData(String key,String data){
+    public void delData(String key, String data){
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.commit();

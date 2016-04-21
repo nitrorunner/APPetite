@@ -41,7 +41,9 @@
         android:text="Sign In"
         android:layout_marginTop="10dp"
         android:textColor="#FFFFFF"
-        android:background="#FF0000" />
+        android:background="#FF0000"
+        android:id="@+id/btnLogIn"
+        android:onClick="OnLogin"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,5 +64,6 @@
         android:textColor="#FFFFFF"
         android:background="#FF0000"
         android:layout_marginTop="50dp"
+        android:id="@+id/btnSignUp"
         />
 </LinearLayout>
