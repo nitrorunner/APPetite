@@ -1,69 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wooden"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:background="@drawable/wooden"
-    android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Sign In"
         android:textAppearance="?android:textAppearanceLarge"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        />
+        android:textColor="@color/whiteText"
+        android:textStyle="bold" />
+
     <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:hint="User Name"
-        android:background="#FFFFFF"
         android:id="@+id/user_name"
-        android:layout_marginTop="70dp"
-        />
-    <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:background="#FFFFFF"
+        android:hint="User Name"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/user_pass"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="#FFFFFF"
         android:hint="Password"
-        android:id="@+id/user_pass"
-        android:layout_marginTop="20dp"
         android:inputType="textPassword"
-        />
+        android:singleLine="true" />
+
     <Button
+        android:id="@+id/btnLogIn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Sign In"
         android:layout_marginTop="10dp"
-        android:textColor="#FFFFFF"
-        android:background="#FF0000"
-        android:id="@+id/btnLogIn"
-        android:onClick="OnLogin"/>
+        android:background="@color/btnBackground"
+        android:onClick="OnLogin"
+        android:text="Sign In"
+        android:textColor="@color/whiteText" />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.49" />
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="New User?"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF"
-        android:id="@+id/textView"
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/btnSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textColor="#FFFFFF"
-        android:background="#FF0000"
         android:layout_marginTop="50dp"
-        android:id="@+id/btnSignUp"
-        />
+        android:background="@color/btnBackground"
+        android:text="Sign Up"
+        android:textColor="@color/whiteText" />
 </LinearLayout>
