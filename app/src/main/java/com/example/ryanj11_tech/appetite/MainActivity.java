@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnTipCalc).setOnClickListener(MainActivity.this);
 
 //        try {
-            loginPref = new modPrefs(MainActivity.this,"LoginPrefs");
-            extraStr = extras.getString("Username");
-            loginPref.putData("Username", extraStr);
-            Toast.makeText(MainActivity.this,"The username currently logged in is " + loginPref.getNameFromPref("Username"),Toast.LENGTH_LONG).show();
+//            loginPref = new modPrefs(MainActivity.this,"LoginPrefs");
+//            extraStr = extras.getString("Username");
+//            loginPref.putData("Username", extraStr);
+//            Toast.makeText(MainActivity.this,"The username currently logged in is " + loginPref.getNameFromPref("Username"),Toast.LENGTH_LONG).show();
 //        }
 //       catch (NullPointerException e)
 //       {

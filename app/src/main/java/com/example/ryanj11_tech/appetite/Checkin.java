@@ -19,6 +19,7 @@ import android.widget.Toast;
 public class Checkin extends AppCompatActivity {
 
     NfcAdapter nfcAdapter;
+    PendingIntent mPendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +44,10 @@ public class Checkin extends AppCompatActivity {
         } else {
             Toast.makeText(Checkin.this, "Wave over tag to check in", Toast.LENGTH_SHORT).show();
         }
-           // handleIntent(getIntent());
+//            handleIntent(getIntent());
 
-
+        mPendingIntent = PendingIntent.getActivity(Checkin.this, 0, new Intent(Checkin.this,
+                getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
 
 
         findViewById(R.id.btnFB).setOnClickListener(new View.OnClickListener() {
@@ -77,33 +79,56 @@ public class Checkin extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        nfcAdapter.enableForegroundDispatch(Checkin.this, mPendingIntent, null, null);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        nfcAdapter.disableForegroundDispatch(this);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        handleIntent(intent);
+    }
+
+
     public void handleIntent(Intent intent) {
-        Tag mTag = getIntent().getParcelableExtra(NfcAdapter.EXTRA_TAG);
-        byte byteId[] = mTag.getId();
-        int size = byteId.length;
-
-        // Convert the byte array to integer
-        String str = "";
-        if (size > 0) {
-            for (int i = 0; i < size; i++) {
-                byte myByte = byteId[i];
-                int myInt = (int) (myByte & 0xFF);
-                str += myInt;
+        Tag mTag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+        String str;
+        int size;
+        try {
+            byte byteId[] = mTag.getId();
+            size = byteId.length;
+            // Convert the byte array to integer
+            str = "";
+            if (size > 0) {
+                for (int i = 0; i < size; i++) {
+                    byte myByte = byteId[i];
+                    int myInt = (int) (myByte & 0xFF);
+                    str += myInt;
+                }
+            } else {
+                Toast.makeText(Checkin.this, "Check-in failed tag cannot be read", Toast.LENGTH_SHORT).show();
             }
-        }
-        else{
-            Toast.makeText(Checkin.this, "Check-in failed tag cannot be read", Toast.LENGTH_SHORT).show();
-        }
+            if (str.equals("13409726")) {
+                Toast.makeText(Checkin.this, "Check-in Complete", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(Checkin.this, "Wrong tag detected", Toast.LENGTH_SHORT).show();
 
-        if (str.equals("13409726")) {
-            Toast.makeText(Checkin.this, "Check-in Complete", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(Checkin.this, "Wrong tag detected", Toast.LENGTH_SHORT).show();
+            }
 
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         //Toast.makeText(Checkin.this,str,Toast.LENGTH_SHORT).show();  //get tag number
+        //https://stackoverflow.com/questions/25610266/android-how-to-read-nfc-tag-with-current-app
     }
 
 }
