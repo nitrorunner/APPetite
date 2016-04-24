@@ -34,9 +34,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/whiteText"
-            android:hint="Enter username"
+            android:hint="Enter Username"
             android:maxLines="1"
-            android:id="@+id/reg_Username"/>
+            android:id="@+id/reg_Username"
+            android:singleLine="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,10 +48,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/whiteText"
-            android:hint="Enter password"
+            android:hint="Enter Password"
             android:maxLines="1"
             android:id="@+id/reg_Password"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:singleLine="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,36 +63,52 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/whiteText"
-            android:hint="Enter password"
+            android:hint="Enter Password"
             android:maxLines="1"
             android:id="@+id/reg_Password2"
-            android:inputType="textPassword"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="First Name "
-            android:textSize="20dp"
-            android:textColor="@color/whiteText"/>
-        <EditText
+            android:inputType="textPassword"
+            android:singleLine="true"/>
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/whiteText"
-            android:hint="Enter first name"
-            android:maxLines="1"
-            android:id="@+id/reg_FName"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Last Name "
-            android:textSize="20dp"
-            android:textColor="@color/whiteText"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/whiteText"
-            android:hint="Enter Last Name"
-            android:maxLines="1"
-            android:id="@+id/reg_LName"/>
+            android:stretchColumns="1">
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Name "
+                    android:textSize="20dp"
+                    android:textColor="@color/whiteText"/>
+                <Space />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name "
+                    android:textSize="20dp"
+                    android:textColor="@color/whiteText"/>
+            </TableRow>
+            <TableRow>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteText"
+                    android:hint="Enter First name"
+                    android:maxLines="1"
+                    android:id="@+id/reg_FName"
+                    android:singleLine="true"
+                    android:nextFocusDown="@+id/reg_LName"/>
+                <Space />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteText"
+                    android:hint="Enter Last Name"
+                    android:maxLines="1"
+                    android:id="@+id/reg_LName"
+                    android:singleLine="true"/>
+            </TableRow>
+        </TableLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -101,9 +119,93 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/whiteText"
-            android:hint="Enter email"
+            android:hint="Enter Email"
             android:maxLines="1"
-            android:id="@+id/reg_Email"/>
+            android:id="@+id/reg_Email"
+            android:singleLine="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number: "
+            android:textSize="20dp"
+            android:textColor="@color/whiteText"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/whiteText"
+            android:hint="Enter Phone Number"
+            android:maxLines="1"
+            android:id="@+id/reg_Phone"
+            android:singleLine="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Street: "
+            android:textSize="20dp"
+            android:textColor="@color/whiteText"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/whiteText"
+            android:hint="Enter Street"
+            android:maxLines="1"
+            android:id="@+id/reg_Street"
+            android:singleLine="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City "
+                    android:textSize="20dp"
+                    android:textColor="@color/whiteText"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/whiteText"
+            android:hint="Enter City"
+            android:maxLines="1"
+            android:id="@+id/reg_City"
+            android:singleLine="true"
+            android:layout_span="1"
+            />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State "
+                    android:textSize="20dp"
+                    android:textColor="@color/whiteText"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/whiteText"
+            android:hint="Enter State"
+            android:maxLines="1"
+            android:id="@+id/reg_State"
+            android:singleLine="true"
+            android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zip Code"
+                    android:textSize="20dp"
+                    android:textColor="@color/whiteText"/>
+               <EditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@color/whiteText"
+                   android:hint="Enter Zip"
+                   android:maxLines="1"
+                   android:id="@+id/reg_Zip"
+                   android:singleLine="true"
+                   android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signBonus"
+            android:textColor="@color/whiteText"
+            android:textSize="8pt"
+            android:gravity="center_horizontal"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

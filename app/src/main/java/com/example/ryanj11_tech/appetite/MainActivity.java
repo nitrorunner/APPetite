@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    modPrefs loginPref, signoutPref;
+    modPrefs loginPref, signoutPref, ptsPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,19 +22,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnCheckIn).setOnClickListener(MainActivity.this);
         findViewById(R.id.btnSignIn).setOnClickListener(MainActivity.this);
         findViewById(R.id.btnTipCalc).setOnClickListener(MainActivity.this);
+        findViewById(R.id.btnPromo).setOnClickListener(MainActivity.this);
 
-//        try {
-//            loginPref = new modPrefs(MainActivity.this,"LoginPrefs");
-//            extraStr = extras.getString("Username");
-//            loginPref.putData("Username", extraStr);
-//            Toast.makeText(MainActivity.this,"The username currently logged in is " + loginPref.getNameFromPref("Username"),Toast.LENGTH_LONG).show();
-//        }
-//       catch (NullPointerException e)
-//       {
-//           Toast.makeText(MainActivity.this,"Something went wrong",Toast.LENGTH_LONG).show();
-//           Intent cancel = new Intent(MainActivity.this, LogInActivity.class);
-//           startActivity(cancel);
-//       }
+        loginPref = new modPrefs(MainActivity.this,"LoginPrefs");
+
+//        String test = loginPref.getNameFromPref("Username");
+//        Toast.makeText(MainActivity.this, "Username is " + test,Toast.LENGTH_LONG).show();
     }
 
     public void onClick(View v) {
@@ -42,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnSignIn:
                 signoutPref = new modPrefs(MainActivity.this,"LoginPrefs");
                 String userData = signoutPref.getNameFromPref("Username");
+                ptsPref = new modPrefs(MainActivity.this, "PointsPref");
+                String userPoints = ptsPref.getNameFromPref("Points");
+                ptsPref.delData("Points", userPoints);
                 signoutPref.delData("LoginPrefs", userData);
                 Intent sgnoIntent = new Intent (MainActivity.this, LogInActivity.class);
                 startActivity(sgnoIntent);
@@ -56,15 +52,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 checkinIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(checkinIntent);
                 break;
-//            case R.id.btnSignIn:
-//                Intent signinIntent = new Intent(MainActivity.this, LogInActivity.class);
-//                signinIntent.setAction(Intent.ACTION_VIEW);
-//                startActivity(signinIntent);
-//                break;
             case R.id.btnTipCalc:
                 Intent tipcalIntent = new Intent(MainActivity.this, TipActivity.class);
                 tipcalIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(tipcalIntent);
+                break;
+            case R.id.btnPromo:
+                Intent promoIntent = new Intent(MainActivity.this, PromotionsActivity.class);
+                promoIntent.setAction(Intent.ACTION_VIEW);
+                startActivity(promoIntent);
                 break;
         }
     }

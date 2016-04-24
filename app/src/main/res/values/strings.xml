@@ -17,4 +17,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_map">Map</string>
     <string name="contentDesc">Image of restaurant</string>
+    <string name="signBonus">Upon signing up, you get 500 points! FREE!</string>
 </resources>

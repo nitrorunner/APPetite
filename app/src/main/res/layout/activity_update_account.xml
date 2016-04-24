@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ryanj11_tech.appetite.UpdateAccount"
+    android:background="@drawable/wooden">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create Account"
+                android:textSize="25dp"
+                android:textColor="@color/whiteText"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username: "
+                android:textSize="20dp"
+                android:textColor="@color/whiteText"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteText"
+                android:hint="Enter username"
+                android:maxLines="1"
+                android:id="@+id/up_Username"
+                android:singleLine="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password: "
+                android:textSize="20dp"
+                android:textColor="@color/whiteText"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteText"
+                android:hint="Enter password"
+                android:maxLines="1"
+                android:id="@+id/up_Password"
+                android:inputType="textPassword"
+                android:singleLine="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password: "
+                android:textSize="20dp"
+                android:textColor="@color/whiteText"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteText"
+                android:hint="Enter password"
+                android:maxLines="1"
+                android:id="@+id/up_Password2"
+                android:inputType="textPassword"
+                android:singleLine="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Name "
+                android:textSize="20dp"
+                android:textColor="@color/whiteText"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteText"
+                android:hint="Enter first name"
+                android:maxLines="1"
+                android:id="@+id/up_FName"
+                android:singleLine="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Name "
+                android:textSize="20dp"
+                android:textColor="@color/whiteText"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteText"
+                android:hint="Enter Last Name"
+                android:maxLines="1"
+                android:id="@+id/up_LName"
+                android:singleLine="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: "
+                android:textSize="20dp"
+                android:textColor="@color/whiteText"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteText"
+                android:hint="Enter email"
+                android:maxLines="1"
+                android:id="@+id/up_Email"
+                android:singleLine="true"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:layout_gravity="center_horizontal"
+                android:onClick="OnRegister"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

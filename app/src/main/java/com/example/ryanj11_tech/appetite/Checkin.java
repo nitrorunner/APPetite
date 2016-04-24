@@ -20,6 +20,7 @@ public class Checkin extends AppCompatActivity {
 
     NfcAdapter nfcAdapter;
     PendingIntent mPendingIntent;
+    modPrefs loginPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +119,12 @@ public class Checkin extends AppCompatActivity {
             }
             if (str.equals("13409726")) {
                 Toast.makeText(Checkin.this, "Check-in Complete", Toast.LENGTH_SHORT).show();
+
+                String type = "checkin";
+                loginPref = new modPrefs(Checkin.this, "LoginPrefs");
+                String username = loginPref.getNameFromPref("Username");
+                DatabaseConnection databaseConnection = new DatabaseConnection(this);
+                databaseConnection.execute(type, username);
             } else {
                 Toast.makeText(Checkin.this, "Wrong tag detected", Toast.LENGTH_SHORT).show();
 

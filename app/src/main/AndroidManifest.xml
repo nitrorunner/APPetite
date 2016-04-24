@@ -20,18 +20,23 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
         </activity>
-        <activity android:name=".TipActivity" />
+        <activity
+            android:name=".TipActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Checkin"
             android:label="@string/title_activity_checkin"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
                 <action android:name="android.nfc.action.TECH_DISCOVERED" />
                 <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
@@ -42,10 +47,12 @@
         <activity android:name=".LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PromotionsActivity"
+            android:parentActivityName=".MainActivity"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -59,8 +66,15 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".CreateAccountActivity"
+            android:parentActivityName=".LogInActivity"/>
+        <activity
             android:name=".MapActivity"
-            android:label="@string/title_activity_map"></activity>
+            android:label="@string/title_activity_map"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".SelectPromotion"
+            android:parentActivityName=".PromotionsActivity" />
     </application>
 
 </manifest>
