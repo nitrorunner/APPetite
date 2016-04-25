@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wooden"
+    android:gravity="center"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:weightSum="1"
+
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reviews"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textStyle="bold"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="474dp"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_weight="0.39">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John Smith 12/20/2016 Great service and wonderful food"
+            android:background="#FFFFFF"
+            android:layout_marginTop="70dp"
+
+            android:layout_weight="0.15"
+            android:id="@+id/post1"
+            android:gravity="top" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Joe Dirt 1/10/2016  The food was horrible and the service was even worse. Never coming back."
+            android:background="#FFFFFF"
+            android:layout_marginTop="70dp"
+
+            android:layout_weight="0.19"
+            android:id="@+id/post2"
+            android:gravity="top" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.49" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/write_review"
+            android:text="write review"
+            android:textColor="@color/whiteText"
+            android:background="@color/btnBackground"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
