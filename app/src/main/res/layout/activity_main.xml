@@ -1,113 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.ryanj11_tech.appetite.MainActivity"
-    android:orientation="vertical"
     android:background="@drawable/wooden">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:id="@+id/btnSignIn"
-        android:layout_gravity="end"
-        android:text="@string/btnSignIn"
-        android:textColor="@color/whiteText"
-        android:background="@color/btnBackground"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="@string/btnMenu"
-        android:textColor="@color/whiteText"
-        android:textSize="24sp"
-        android:id="@+id/btnMenu"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/btnBackground"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.ryanj11_tech.appetite.MainActivity">
 
-    <Button
-        android:layout_width="140sp"
-        android:layout_height="40sp"
-        android:background="@color/btnBackground"
-        android:text="@string/btnNavToMain"
-        android:id="@+id/btnTakeMe"
-        android:textColor="@color/whiteText"
-        android:layout_marginBottom="19dp"
-        android:layout_above="@+id/btnMenu"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <Button
+            android:id="@+id/btnSignIn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="end"
+            android:layout_marginBottom="10dp"
+            android:background="@color/btnBackground"
+            android:text="@string/btnSignIn"
+            android:textColor="@color/whiteText" />
 
-    <Button
-        android:layout_width="140sp"
-        android:layout_height="40sp"
-        android:background="@color/btnBackground"
-        android:text="@string/btnReview"
-        android:id="@+id/btnReviews"
-        android:textColor="@color/whiteText"
-        android:layout_alignBottom="@+id/btnTakeMe"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-
-    <Button
-        android:layout_width="140sp"
-        android:layout_height="40sp"
-        android:background="@color/btnBackground"
-        android:text="@string/btnCheckin"
-        android:id="@+id/btnCheckIn"
-        android:textColor="@color/whiteText"
-        android:singleLine="true"
-        android:layout_above="@+id/btnTakeMe"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="18dp" />
-
-    <Button
-        android:layout_width="140sp"
-        android:layout_height="40sp"
-        android:background="@color/btnBackground"
-        android:text="@string/btnPromo"
-        android:id="@+id/btnPromo"
-        android:textColor="@color/whiteText"
-        android:layout_alignTop="@+id/btnCheckIn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:text="@string/btnTipCalc"
-        android:id="@+id/btnTipCalc"
-        android:background="@color/btnBackground"
-        android:textColor="@color/whiteText"
-        android:layout_marginBottom="15dp"
-        android:layout_above="@+id/btnCheckIn"
-        android:layout_centerHorizontal="true"
-        android:textSize="12sp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/contentDesc"
+            android:src="@drawable/restaurant" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/btnSignIn"
-        android:layout_alignEnd="@+id/btnSignIn"
-        android:layout_above="@+id/btnTipCalc"
-        android:src="@drawable/restaurant"
-        android:contentDescription="@string/contentDesc" />
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom">
+
+            <Button
+                android:id="@+id/btnMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/btnBackground"
+                android:text="@string/btnMenu"
+                android:textColor="@color/whiteText"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/btnTakeMe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/btnBackground"
+                    android:text="@string/btnNavToMain"
+                    android:textColor="@color/whiteText" />
+
+                <Button
+                    android:id="@+id/btnReviews"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/btnBackground"
+                    android:text="@string/btnReview"
+                    android:textColor="@color/whiteText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/btnCheckIn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/btnBackground"
+                    android:text="@string/btnCheckin"
+                    android:textColor="@color/whiteText" />
+
+                <Button
+                    android:id="@+id/btnPromo"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/btnBackground"
+                    android:text="@string/btnPromo"
+                    android:textColor="@color/whiteText" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnTipCalc"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/btnBackground"
+                android:text="@string/btnTipCalc"
+                android:textColor="@color/whiteText"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>
