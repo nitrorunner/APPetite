@@ -48,12 +48,22 @@ public class PromotionsActivity extends AppCompatActivity {
         type = "getPromotion";
         databaseConnection.execute(type);
 
-        type = "getUserPoints";
-        modPrefs ptsPref = new modPrefs(PromotionsActivity.this,"LoginPrefs");
-        String userPts = ptsPref.getNameFromPref("Username");
-        Toast.makeText(PromotionsActivity.this, "Username is " + userPts,Toast.LENGTH_LONG).show();
-        databaseConnection = new DatabaseConnection(this);
-        databaseConnection.execute(type, userPts);
+        ptsPref = new modPrefs(PromotionsActivity.this, "PointsPref");
+        String points = ptsPref.getNameFromPref("Points");
+        TextView textView = (TextView) findViewById(R.id.promoPts);
+        textView.setText("You have: " + points + " points.");
+
+//        type = "getUserPoints";
+//        modPrefs ptsPref = new modPrefs(PromotionsActivity.this,"LoginPrefs");
+//        String userPts = ptsPref.getNameFromPref("Username");
+//        Toast.makeText(PromotionsActivity.this, "Username is " + userPts,Toast.LENGTH_LONG).show();
+//        databaseConnection = new DatabaseConnection(this);
+//        databaseConnection.execute(type, userPts);
+//
+//        ptsPref = new modPrefs(PromotionsActivity.this, "PointsPref");
+//        String points = ptsPref.getNameFromPref("Points");
+//        TextView textView = (TextView) findViewById(R.id.promoPts);
+//        textView.setText("You have: " + points + " points.");
 
         modPrefs jsonPref = new modPrefs(PromotionsActivity.this, "JSONPromo");
         if (jsonPref.getNameFromPref("JSON").equals(null))
@@ -102,10 +112,7 @@ public class PromotionsActivity extends AppCompatActivity {
                             }
                         });
 
-                ptsPref = new modPrefs(PromotionsActivity.this, "PointsPref");
-                String points = ptsPref.getNameFromPref("Points");
-                TextView textView = (TextView) findViewById(R.id.promoPts);
-                textView.setText("You have: " + points + " points.");
+
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -117,12 +124,12 @@ public class PromotionsActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        ptsPref = new modPrefs(PromotionsActivity.this, "PointsPref");
-        String points = ptsPref.getNameFromPref("Points");
-        TextView textView = (TextView) findViewById(R.id.promoPts);
-        textView.setText("You have: " + points + " points.");
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        ptsPref = new modPrefs(PromotionsActivity.this, "PointsPref");
+//        String points = ptsPref.getNameFromPref("Points");
+//        TextView textView = (TextView) findViewById(R.id.promoPts);
+//        textView.setText("You have: " + points + " points.");
+//    }
 }

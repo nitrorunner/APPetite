@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.text.LoginFilter;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    String type;
+    DatabaseConnection databaseConnection;
     modPrefs loginPref, signoutPref, ptsPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnSignIn).setOnClickListener(MainActivity.this);
         findViewById(R.id.btnTipCalc).setOnClickListener(MainActivity.this);
         findViewById(R.id.btnPromo).setOnClickListener(MainActivity.this);
+
+        type = "getUserPoints";
+        modPrefs ptsPref = new modPrefs(MainActivity.this,"LoginPrefs");
+        String userPts = ptsPref.getNameFromPref("Username");
+        Toast.makeText(MainActivity.this, "Username is " + userPts,Toast.LENGTH_LONG).show();
+        databaseConnection = new DatabaseConnection(this);
+        databaseConnection.execute(type, userPts);
+
 
         loginPref = new modPrefs(MainActivity.this,"LoginPrefs");
 

@@ -52,7 +52,7 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
 
     String result="";
     String line="";
-    String username, type, JSON_STRING, usrPts, rdmPts;
+    String username, type, JSON_STRING, usrPts, rdmPts, pts;
     ProgressDialog loading;
 
     @Override
@@ -92,7 +92,6 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
         }
         else if (type.equals("checkin")) {
             username = params[1];
-            String pts = "300";
             try {
                 URL url = new URL(checkin_URL);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -101,8 +100,7 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&" +
-                        URLEncoder.encode("points", "UTF-8") + "=" + URLEncoder.encode(pts, "UTF-8");
+                String post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -125,7 +123,6 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
         else if (type.equals("redeemPoints")) {
             usrPts = params[1];
             rdmPts = params[2];
-
             try {
                 URL url = new URL(redeem_URL);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -273,7 +270,6 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPreExecute() {
-        loading = ProgressDialog.show(context,"Loading", "Please Wait...");
     }
     /**
      * onPostExecute determines the action to be performed dependending on the string retrieved from the php file
@@ -283,7 +279,6 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Login Status");
-        loading.dismiss();
         if (result.equals("Login Success"))
         {
             alertDialog.setMessage(result);
@@ -342,8 +337,12 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
         }
         else if (result.equals("Successfully checked in! You've received 200 points.!"))
         {
-            alertDialog.setMessage(result);
-            alertDialog.show();
+            modPrefs setPtsPref = new modPrefs(context, "PointsPref");
+            String points = setPtsPref.getNameFromPref("Points");
+            int iPoints = Integer.parseInt(points);
+            int totalPts = (iPoints + 200);
+            String total = Integer.toString(totalPts);
+            setPtsPref.putData("Points", total);
         }
         else if (result.equals(null))
         {
