@@ -11,17 +11,166 @@
     android:weightSum="1"
     android:gravity="center"
     >
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Menu"
-        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal|top"
         android:textAppearance="?android:textAppearanceLarge"
         android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
 
-        android:layout_gravity="center_horizontal" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="454dp"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_weight="0.47">
+
+        //1st textview/button/image
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="33dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Spaghetti"
+            android:background="#f70b0b"
+            android:id="@+id/textView1"
+            android:textStyle="bold"
+            android:layout_gravity="right"
+            android:layout_weight="0.02"
+            android:layout_below="@+id/textView2"
+            android:layout_alignRight="@+id/btnOrder1"
+            android:layout_alignEnd="@+id/btnOrder1" />
+
+        <ImageView
+            android:layout_width="102dp"
+            android:layout_height="131dp"
+            android:id="@+id/imageView1"
+
+            android:src="@drawable/spaghetti"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/textView2"
+            android:layout_alignEnd="@+id/textView2"
+            android:layout_alignBottom="@+id/btnOrder1" />
+
+        <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:text="Add to Order"
+        android:id="@+id/btnOrder1"
+        android:textStyle="bold"
+            android:background="#f70b0b"
+            android:layout_gravity="right"
+            android:layout_below="@+id/textView1"
+            android:layout_alignLeft="@+id/btnOrder2"
+            android:layout_alignStart="@+id/btnOrder2"
+            android:layout_marginTop="19dp" />
+
+        //second
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:src="@drawable/bbqribsfries"
+            android:layout_weight="0.20"
+            android:layout_gravity="left"
+            android:id="@+id/imageView2"
+            android:layout_below="@+id/imageView1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="41dp"
+            android:layout_alignRight="@+id/imageView1"
+            android:layout_alignEnd="@+id/imageView1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="BBQ Ribs and Fries"
+            android:background="#f70b0b"
+            android:id="@+id/textView2"
+            android:textStyle="bold"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_alignStart="@+id/textView1"
+            android:layout_alignRight="@+id/btnOrder1"
+            android:layout_alignEnd="@+id/btnOrder1" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:text="BBQ Ribs and Fries"-->
+            <!--android:background="#f70b0b"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:layout_weight="0.14"-->
+            <!--android:id="@+id/textView8"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true" />-->
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="33dp"
+            android:text="Add to Order"
+            android:textStyle="bold"
+            android:id="@+id/btnOrder2"
+            android:background="#f70b0b"
+            android:layout_gravity="right"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
 
+        //third image/button/textview
 
+        <ImageView
+            android:layout_width="93dp"
+            android:layout_height="80dp"
+            android:src="@drawable/burger"
+            android:layout_below="@+id/btnOrder2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="65dp"
+            android:id="@+id/imageView3" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Burger and fries"
+            android:layout_alignTop="@+id/imageView3"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_alignRight="@+id/textView2"
+            android:layout_alignEnd="@+id/textView2"
+            android:background="#f70b0b"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView3" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to Order"
+            android:textStyle="bold"
+            android:id="@+id/btnOrder3"
+            android:background="#f70b0b"
+
+            android:layout_alignBottom="@+id/imageView3"
+            android:layout_alignLeft="@+id/btnOrder2"
+            android:layout_alignStart="@+id/btnOrder2"
+            android:layout_alignRight="@+id/textView3"
+            android:layout_alignEnd="@+id/textView3" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Order"
+        android:id="@+id/vOrder"
+        android:background="#f70b0b"
+        />
 </LinearLayout>
