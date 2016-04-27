@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         type = "getUserPoints";
         modPrefs ptsPref = new modPrefs(MainActivity.this,"LoginPrefs");
         String userPts = ptsPref.getNameFromPref("Username");
-        Toast.makeText(MainActivity.this, "Username is " + userPts,Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, "Username is " + userPts,Toast.LENGTH_LONG).show();
         databaseConnection = new DatabaseConnection(this);
         databaseConnection.execute(type, userPts);
 
