@@ -52,12 +52,13 @@ public class SelectPromotion extends AppCompatActivity {
 
         total = (usrPts - rdmPts);
         totalPts = Integer.toString(total);
-        alertDialog = new AlertDialog.Builder(this);
+
 
         {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    alertDialog = new AlertDialog.Builder(SelectPromotion.this);
                     if (total < 0)
                     {
                         alertDialog.setMessage("You don't have enough points to redeem this.");

@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnSignIn).setOnClickListener(MainActivity.this);
         findViewById(R.id.btnTipCalc).setOnClickListener(MainActivity.this);
         findViewById(R.id.btnPromo).setOnClickListener(MainActivity.this);
+        findViewById(R.id.btnReviews).setOnClickListener(MainActivity.this);
+        findViewById(R.id.btnMenu).setOnClickListener(MainActivity.this);
 
         type = "getUserPoints";
         modPrefs ptsPref = new modPrefs(MainActivity.this,"LoginPrefs");
@@ -73,7 +75,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 promoIntent.setAction(Intent.ACTION_VIEW);
                 startActivity(promoIntent);
                 break;
+            case R.id.btnReviews:
+                Intent reviewIntent = new Intent(MainActivity.this, ReviewActivity.class);
+                reviewIntent.setAction(Intent.ACTION_VIEW);
+                startActivity(reviewIntent);
+                break;
+            case R.id.btnMenu:
+                Intent menuIntent = new Intent (MainActivity.this, MenuActivity.class);
+                menuIntent.setAction(Intent.ACTION_VIEW);
+                startActivity(menuIntent);
+                break;
         }
     }
-
 }

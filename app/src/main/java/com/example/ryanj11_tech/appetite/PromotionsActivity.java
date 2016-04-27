@@ -40,7 +40,6 @@ public class PromotionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotions);
 
-        final ArrayList<HashMap<String, String>> promosList;
         listView = (ListView) findViewById(R.id.listView);
         linear = (LinearLayout) findViewById(R.id.linearLay);
 
@@ -53,18 +52,6 @@ public class PromotionsActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.promoPts);
         textView.setText("You have: " + points + " points.");
 
-//        type = "getUserPoints";
-//        modPrefs ptsPref = new modPrefs(PromotionsActivity.this,"LoginPrefs");
-//        String userPts = ptsPref.getNameFromPref("Username");
-//        Toast.makeText(PromotionsActivity.this, "Username is " + userPts,Toast.LENGTH_LONG).show();
-//        databaseConnection = new DatabaseConnection(this);
-//        databaseConnection.execute(type, userPts);
-//
-//        ptsPref = new modPrefs(PromotionsActivity.this, "PointsPref");
-//        String points = ptsPref.getNameFromPref("Points");
-//        TextView textView = (TextView) findViewById(R.id.promoPts);
-//        textView.setText("You have: " + points + " points.");
-
         modPrefs jsonPref = new modPrefs(PromotionsActivity.this, "JSONPromo");
         if (jsonPref.getNameFromPref("JSON").equals(null))
         {
@@ -75,7 +62,6 @@ public class PromotionsActivity extends AppCompatActivity {
             String result = jsonPref.getNameFromPref("JSON");
 
             promotionsListAdapter = new PromotionsListAdapter(this, R.layout.list_promo);
-            listView = (ListView) findViewById(R.id.listView);
             listView.setAdapter(promotionsListAdapter);
             try {
                 jsonObject = new JSONObject(result);
@@ -104,15 +90,13 @@ public class PromotionsActivity extends AppCompatActivity {
                                 String text = textName.getText().toString();
                                 String text2 = textDescription.getText().toString();
                                 String text3 = textPoints.getText().toString();
-//                                String name = String.valueOf(promotionsListAdapter.getItemAtPosition(position));
+
                                 intent.putExtra("name", text);
                                 intent.putExtra("description", text2);
                                 intent.putExtra("points", text3);
                                 startActivity(intent);
                             }
                         });
-
-
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -123,13 +107,4 @@ public class PromotionsActivity extends AppCompatActivity {
             }
         }
     }
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        ptsPref = new modPrefs(PromotionsActivity.this, "PointsPref");
-//        String points = ptsPref.getNameFromPref("Points");
-//        TextView textView = (TextView) findViewById(R.id.promoPts);
-//        textView.setText("You have: " + points + " points.");
-//    }
 }

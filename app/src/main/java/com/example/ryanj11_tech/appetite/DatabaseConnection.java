@@ -46,6 +46,8 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
     String points_URL = "http://menesesj2.leto.feralhosting.com/APPetite/getPoints.php";
     String redeem_URL = "http://menesesj2.leto.feralhosting.com/APPetite/setPoints.php";
     String checkin_URL = "http://menesesj2.leto.feralhosting.com/APPetite/checkIn.php";
+    String menu_URL = "http://menesesj2.leto.feralhosting.com/APPetite/getMenu.php";
+    String review_URL = "http://menesesj2.leto.feralhosting.com/APPetite/getReviews.php";
     DatabaseConnection (Context ctx){
         context = ctx;
     }
@@ -229,6 +231,60 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
                 e.printStackTrace();
             }
         }
+        else if (type.equals("getMenu"))
+        {
+            try {
+                URL url = new URL(menu_URL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
+                StringBuilder stringBuilder = new StringBuilder();
+                while ((JSON_STRING = reader.readLine())!=null) {
+                    stringBuilder.append(JSON_STRING+"\n");
+                }
+                reader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                result = stringBuilder.toString().trim();
+                return result;
+
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (type.equals("getReviews"))
+        {
+            try {
+                URL url = new URL(review_URL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
+                StringBuilder stringBuilder = new StringBuilder();
+                while ((JSON_STRING = reader.readLine())!=null) {
+                    stringBuilder.append(JSON_STRING+"\n");
+                }
+                reader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                result = stringBuilder.toString().trim();
+                return result;
+
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         else if (type.equals("getUserPoints"))
         {
             String userPts = params[1];
@@ -270,6 +326,7 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPreExecute() {
+
     }
     /**
      * onPostExecute determines the action to be performed dependending on the string retrieved from the php file
@@ -278,7 +335,6 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login Status");
         if (result.equals("Login Success"))
         {
             alertDialog.setMessage(result);
@@ -305,9 +361,19 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
                 }
             });
         }
+        else if (result.contains("review_response"))
+        {
+            modPrefs prefs = new modPrefs(context,"JSONReview");
+            prefs.putData("JSON", result);
+        }
         else if (result.contains("result"))
         {
             modPrefs prefs = new modPrefs(context,"JSONPromo");
+            prefs.putData("JSON",result);
+        }
+        else if (result.contains("menu_response"))
+        {
+            modPrefs prefs = new modPrefs(context,"JSONMenu");
             prefs.putData("JSON",result);
         }
         else if (result.contains("Points"))

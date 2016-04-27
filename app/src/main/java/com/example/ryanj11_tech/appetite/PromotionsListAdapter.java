@@ -63,7 +63,6 @@ public class PromotionsListAdapter extends ArrayAdapter {
         }
         Promotions promotions = (Promotions)this.getItem(position);
 
-
         promotionsHolder.tx_name.setText(promotions.getName());
         promotionsHolder.tx_desc.setText(promotions.getDescription());
         promotionsHolder.tx_points.setText(promotions.getPoints());
