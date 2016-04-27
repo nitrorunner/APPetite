@@ -1,10 +1,15 @@
 package com.example.ryanj11_tech.appetite;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,6 +35,7 @@ public class ReviewActivity extends AppCompatActivity {
     Reviews reviews;
     String result;
     ReviewsListAdapter reviewsListAdapter;
+    Button btnWrite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,7 @@ public class ReviewActivity extends AppCompatActivity {
         databaseConnection = new DatabaseConnection(this);
         type = "getReviews";
         databaseConnection.execute(type);
+        btnWrite = (Button) findViewById(R.id.btnWriteReview);
 
         modPrefs jsonPref = new modPrefs(ReviewActivity.this, "JSONReview");
 
@@ -78,5 +85,25 @@ public class ReviewActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void writeReview(View view) {
+        final AlertDialog.Builder write = new AlertDialog.Builder(ReviewActivity.this);
+        write.setMessage("Write a Review");
+        final EditText review = new EditText(this);
+        review.setHint("Give us your feedback...");
+        write.setView(review);
+        write.setPositiveButton("Review", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+               String written = review.getText().toString();
+                DatabaseConnection databaseConnection = new DatabaseConnection(ReviewActivity.this);
+                String type = "writeReview";
+                modPrefs checkLogin = new modPrefs(ReviewActivity.this, "LoginPrefs");
+                String username = checkLogin.getNameFromPref("Username");
+                databaseConnection.execute(type, username, written);
+            }
+        });
+        write.show();
     }
 }

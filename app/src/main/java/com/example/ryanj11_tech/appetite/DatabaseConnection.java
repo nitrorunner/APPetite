@@ -48,6 +48,7 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
     String checkin_URL = "http://menesesj2.leto.feralhosting.com/APPetite/checkIn.php";
     String menu_URL = "http://menesesj2.leto.feralhosting.com/APPetite/getMenu.php";
     String review_URL = "http://menesesj2.leto.feralhosting.com/APPetite/getReviews.php";
+    String setReview_URL = "http://menesesj2.leto.feralhosting.com/APPetite/setReview.php";
     DatabaseConnection (Context ctx){
         context = ctx;
     }
@@ -135,6 +136,38 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
                 String post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(usrPts, "UTF-8") + "&" +
                         URLEncoder.encode("points", "UTF-8") + "=" + URLEncoder.encode(rdmPts, "UTF-8");
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                while ((line = bufferedReader.readLine()) != null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return result;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (type.equals("writeReview")) {
+            String user = params[1];
+            String review = params[2];
+            try {
+                URL url = new URL(setReview_URL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8") + "&" +
+                        URLEncoder.encode("review", "UTF-8") + "=" + URLEncoder.encode(review, "UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -398,6 +431,18 @@ public class DatabaseConnection extends AsyncTask<String, Void, String> {
                 public void onDismiss(DialogInterface dialog) {
                     Intent back2promo = new Intent(context,PromotionsActivity.class);
                     context.startActivity(back2promo);
+                }
+            });
+        }
+        else if (result.equals("Review Posted!"))
+        {
+            alertDialog.setMessage(result);
+            alertDialog.show();
+            alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    Intent back2review = new Intent(context,MainActivity.class);
+                    context.startActivity(back2review);
                 }
             });
         }

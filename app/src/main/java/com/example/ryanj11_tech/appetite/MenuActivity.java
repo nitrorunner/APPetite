@@ -72,26 +72,26 @@ public class MenuActivity extends AppCompatActivity {
                     menuListAdapter.add(menu);
                     count++;
                 }
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> promotionsListAdapter, View view, int position, long id) {
-
-                        Intent intent = new Intent (MenuActivity.this, ViewOrder.class);
-                        TextView textName = (TextView) view.findViewById(R.id.menuName);
-                        TextView textDescription = (TextView) view.findViewById(R.id.menuDescription);
-                        TextView textPrice = (TextView) view.findViewById(R.id.menuPrice);
-
-                        String text = textName.getText().toString();
-                        String text2 = textDescription.getText().toString();
-                        String text3 = textPrice.getText().toString();
-
-                        intent.putExtra("name", text);
-                        intent.putExtra("description", text2);
-                        intent.putExtra("price", text3);
-                        startActivity(intent);
-                    }
-                });
+                //to be added
+//                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> promotionsListAdapter, View view, int position, long id) {
+//
+//                        Intent intent = new Intent (MenuActivity.this, ViewOrder.class);
+//                        TextView textName = (TextView) view.findViewById(R.id.menuName);
+//                        TextView textDescription = (TextView) view.findViewById(R.id.menuDescription);
+//                        TextView textPrice = (TextView) view.findViewById(R.id.menuPrice);
+//
+//                        String text = textName.getText().toString();
+//                        String text2 = textDescription.getText().toString();
+//                        String text3 = textPrice.getText().toString();
+//
+//                        intent.putExtra("name", text);
+//                        intent.putExtra("description", text2);
+//                        intent.putExtra("price", text3);
+//                        startActivity(intent);
+//                    }
+//                });
             } catch (JSONException e) {
                 e.printStackTrace();
             }
